@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Stack inicial Dan
+
+Resources:
+  PrimeraLambda:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      MemorySize: 512
+      Runtime: nodejs12.x
+      Timeout: 300
+      FunctionName: "PrimeraLambda"
+      CodeUri: lambda-prueba/
+      Handler: danielArchivo.danielFuncion
+      Policies:
+        - AWSLambdaFullAccess
